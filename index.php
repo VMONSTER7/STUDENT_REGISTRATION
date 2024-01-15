@@ -39,8 +39,11 @@ student registration
         STUDENT REGISTRATION FORM 
     </h1>
     <div class="login">
-    <form id="form" name="form" action="index.php" method="POST">
-            <div class="input-box">
+    <div id="success-message" name="success-message" style="display: <?php echo ($insert) ? 'block' : 'none'; ?>">
+            <p id="success-message" name="success-message">Thanks for registering!</p>
+        </div>
+        <form id="form" name="form" action="index.php" method="POST" style="display: <?php echo ($insert) ? 'none' : 'block'; ?>">
+         <div class="input-box">
                 <label for="id">STUDENT ID</label>
                 <input name="id" id="id" type="text" placeholder="ID" required>
             </div>
@@ -64,6 +67,7 @@ student registration
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </form>
+</div>
 </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
