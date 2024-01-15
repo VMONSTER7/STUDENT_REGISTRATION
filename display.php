@@ -121,10 +121,25 @@
 
     <!-- DataTables initialization with export buttons -->
     <script>
-        $(document).ready(function() {
+       $(document).ready(function () {
             $('#myTable').DataTable({
+                "processing": true,
+                "serverSide": true,
+                "ajax": {
+                    "url": "script.php",
+                    "type": "POST"
+                },
+                "columns": [
+                    {"data": "id"},
+                    {"data": "name"},
+                    {"data": "email"},
+                    {"data": "mobile"},
+                    {"data": "address"},
+                    {"data": "edit", "orderable": false, "searchable": false},
+                    {"data": "delete", "orderable": false, "searchable": false}
+                ],
                 "columnDefs": [
-                    { "targets": [5, 6], "orderable": false } // Disable sorting for the Action (Edit and Delete) columns
+                    {"targets": [3, 5, 6], "orderable": false} // Disable sorting for the Action (Edit and Delete) columns
                 ],
                 "dom": 'Bfrtip',
                 "buttons": [
